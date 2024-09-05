@@ -1,4 +1,8 @@
 #cloud-config
+#NOTE: before use edit the following:
+# 1. replace <num-users> with the number of guest accounts you want
+# 2. replace <admin-user> with instructors username
+# 3. replace <admin-public-ssh-key> with instructures public ssh key
 package_update: true
 package_upgrade: true
 packages:
@@ -7,7 +11,13 @@ packages:
   - ruby-full
   - build-essential
   - zlib1g-dev
+users:
+  - name: <admin-user>
+    shell: /bin/bash
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    ssh_authorized_keys:
+      - <admin-user-ssh-public-key>
 runcmd:
   - ["wget","https://raw.githubusercontent.com/acenet-arc/cloud_from_a_to_z/master/cloud-init-files/passphrase_generator.py"]
   - ["wget","https://raw.githubusercontent.com/acenet-arc/cloud_from_a_to_z/master/cloud-init-files/setup_jekyll_and_guest_accounts.py"]
-  - ["python3","./setup_jekyll_and_guest_accounts.py","1"]
+  - ["python3","./setup_jekyll_and_guest_accounts.py","<num-users>"]

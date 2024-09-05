@@ -15,22 +15,18 @@ def replaceStrInFile(strMatch,strReplace,fileName):
   file.write(fileText)
   file.close()
 def createUserWebDirectory(username):
-
   webDirectory="/var/www/html/"+username
   subprocess.run(["mkdir",webDirectory])
   subprocess.run(["chown",username+":"+username,webDirectory])
 def deleteUserWebDirectory(username):
-
   webDirectory="/var/www/html/"+username
   subprocess.run(["rm","-rf",webDirectory])
 def createGuestAccounts(numAccounts):
-
   print("creating guest accounts")
   guest_account_passphrase=passphrase_generator.getRandom3WordPhrase()
   guest_account_passphrase_enc=crypt.crypt(guest_account_passphrase)
   print("  Guest accounts passphrase: \""+guest_account_passphrase+"\"")
   for i in range(numAccounts):
-
     username="{}{:02d}".format("user",i+1)
     print("  "+username)
     subprocess.run(["useradd","-s","/bin/bash","-m","-p",
@@ -38,7 +34,6 @@ def createGuestAccounts(numAccounts):
 
     createUserWebDirectory(username)
 def deletGuestAccounts(numAccounts):
-
   print("deleting guest accounts")
   for i in range(numAccounts):
 
@@ -52,8 +47,12 @@ def enablePasswordSSHAuthentication():
 
   print("***WARNING: SHOULD HAVE FAIL2BAN RUNNING NOW***")
   print("enabling ssh password authentication")
+  replaceStrInFile("#PasswordAuthentication yes","PasswordAuthentication yes",
+    "/etc/ssh/sshd_config")
   replaceStrInFile("PasswordAuthentication no","PasswordAuthentication yes",
     "/etc/ssh/sshd_config")
+  replaceStrInFile("PasswordAuthentication no","PasswordAuthentication yes",
+    "/etc/ssh/sshd_config.d/60-cloudimg-settings.conf")
   subprocess.run(["service","ssh","restart"])
 def installJekyll():
 

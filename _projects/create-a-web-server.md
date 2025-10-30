@@ -1,20 +1,7 @@
 ---
-layout: episode
+layout: page
 title: "Creating a web server"
-teaching: 20
-exercises: 10
-questions:
-- "What is Apache?"
-- "How do we install and configure Apache?"
-- "How do we check that our web server is running?"
-- "Where do we put our first web page?"
-objectives:
-- Install Apache2 web-server
-- Configure security rules to allow access to your web-site
-keypoints:
-- "Use `apt search` to find a specific package name."
-- "Use `apt install` to install packages."
-- "Open port 80 in your security group for HTTP access to your site."
+permalink: /creating-a-web-server/
 ---
 
 In this episode we will install and configure an [**Apache Web Server**](https://httpd.apache.org/). This is free, open source software that is developed and maintained by the Apache Software Foundation and is one of the most widely used web server platforms on the Internet. While most websites use Apache there are alternatives such as [Nginx](https://www.nginx.com/) which can provide better performance in cases where a VM is running a single website.

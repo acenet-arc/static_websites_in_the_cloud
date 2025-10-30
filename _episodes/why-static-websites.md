@@ -25,13 +25,13 @@ start_time: 780
 First what is a static website? **A static website is a website in which the contents are the same for every visitor to the web-page.** Some examples of static websites created using two popular static website generators:
 
 #### Jekyll
-* [IBM Mobile](https://mobilefirstplatform.ibmcloud.com/)
 * [US Freedom of Informaiton Act (FOIA)](https://www.foia.gov/)
 * [Hildegard](https://hildegard-1877bibliography.ca/)
 
 #### Hugo
 * [letsencrypt](https://letsencrypt.org/)
 * [aether](https://getaether.net/)
+* [kidical-mass](http://kidicalmass.ca)
 
 Why would we want a static website rather than an alternative in which the contents can be customized for each visitor? To help understand why we might want a static website lets start with a little web history to put this question into context.
 

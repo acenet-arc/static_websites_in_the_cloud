@@ -71,12 +71,13 @@ episode_order:
   - why-static-websites
   - first-jekyll-site
   - jekyll-page-front-matter
-  - jekyll-site-config
   - break-day-1
-  - jekyll-pages-and-markdown-I
-  - jekyll-pages-and-markdown-II
-  - break-day-1b
-  - jekyll-pages-and-markdown-III
+  - jekyll-site-config
+  - jekyll-pages-and-markdown
+#  - jekyll-pages-and-markdown-I
+#  - jekyll-pages-and-markdown-II
+#  - jekyll-pages-and-markdown-III
+#  - break-day-1b
   - posts-and-assets
   - git-hub-hosting-demo
 

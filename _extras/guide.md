@@ -4,7 +4,7 @@ title: "Instructor Notes"
 permalink: /guide/
 ---
 
-To create a VM for students to use for creating their first jekyll site use the `cloud_init_webserver.yml` file in the [cloud-init-files](../cloud-init-files/) folder when creating the VM to perform setup. Copy and paste the contents of that file into "Customization Script" under the "Configuration" tab in the popup while creating a VM in OpenStack.  The `cloud_init_webserver.yml` will need to have a few edits to setup a public key and username for the admin user, as well as the number of guest users. See notes in the file for details.
+To create a VM for students to use for creating their first jekyll site use the `cloud_init_webserver.yml` file in the [cloud-init-files](https://github.com/acenet-arc/static_websites_in_the_cloud/tree/main/cloud-init-files) folder when creating the VM to perform setup. Copy and paste the contents of that file into "Customization Script" under the "Configuration" tab in the popup while creating a VM in OpenStack.  The `cloud_init_webserver.yml` will need to have a few edits to setup a public key and username for the admin user, as well as the number of guest users. See notes in the file for details.
 
 With a `p16-24gb` flavor VM, 30 guest users is a very comfortable number. As for storage, 1GB per user is also quite comfortable. With 30 guest users per VM, I went with 50GB root volume, should be more than enough space given that the site we are working with will only be a few MB.
 

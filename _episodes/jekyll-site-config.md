@@ -7,6 +7,7 @@ questions:
 - How do you set site wide settings?
 objectives:
 keypoints:
+- The `_config.yml` file is used to control site wide settings.
 start: false
 ---
 
